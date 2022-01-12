@@ -4,13 +4,11 @@ import classes from './PhotoList.module.css';
 
 const PhotoList = props => {
     return (
-        <ul className={classes['photo-list']}>
+        <div className={classes['photo-list']}>
             {props.photos.map((photo) => (
                 <Photo key={photo.id} title={photo.title} imageUrl={photo.imageUrl} date={photo.date} />
-            ))}
-            
-            
-        </ul>
+            ))} 
+        </div>
     )
 };
 
