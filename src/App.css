@@ -5,11 +5,14 @@
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   color: black;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 12px;
 }
+.search h2{
+  text-align: center;
+}
 .result{
-  margin: auto;
+  margin: 1rem auto;
   width: 90%;
   text-align: center;
   padding: 1rem;
@@ -28,5 +31,9 @@ button:hover {
   transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
+@media screen and (max-width:900px) and (min-width: 324px)  {
+  .result{
+    width: 100%;
+  }
+}
 

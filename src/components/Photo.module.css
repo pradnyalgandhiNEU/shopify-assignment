@@ -1,15 +1,33 @@
 .photo{
   margin: 1rem;
-  padding: 2rem;
+  width: 90%;
   background-color: rgb(235, 235, 235);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
   text-align: center;
-  color: black
+  color: black;
+  overflow-x: scroll;
 }
 h2{
   font-weight: bold;
+  text-align: left;
+  padding: 1rem;
+  margin: 0px;
+}
+h3{
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: left;
 }
 .date{
-  font-size: large;
+  font-size: small;
+  text-align: left;
+  color: rgb(122, 122, 122);
+  padding: 0.5rem 1rem;
+  margin: 0px;
+}
+@media screen and (max-width:900px) and (min-width: 324px) {
+  .photo{
+     margin: 1rem auto
+  }
 }

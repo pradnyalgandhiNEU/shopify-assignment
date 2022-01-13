@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import PhotoList from './components/PhotoList'
 import './App.css';
+import Loading from './components/Loading';
 
 function App() {
 
@@ -10,19 +11,27 @@ function App() {
 
   const fetchData = useCallback( async() => {
     setIsLoading(true);
+    
     const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${API_KEY}`);
     const data = await response.json();
 
     const transformedData = data.photos.map((res) => {
+      // console.log(res.sol);
       return {
         id: res.id,
         title: res.camera.full_name,
+        rover: res.rover.name,
         imageUrl: res.img_src,
+        sol: res.sol,
         date: res.earth_date
       }
     })
-    setPhotos(transformedData);
-    setIsLoading(false);
+    setTimeout(()=>{
+      setPhotos(transformedData);
+      setIsLoading(false);
+    },2000)
+    
+    
     console.log(data.photos);
   }, [API_KEY]);
 
@@ -40,8 +49,7 @@ function App() {
       </section>
       <section className='result'>
         {!isLoading && photos.length > 0 && <PhotoList photos={photos} />}
-        {!isLoading && photos.length === 0 && <p>Found no Photos </p>}
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loading/>}
       </section>
     </React.Fragment>
   );

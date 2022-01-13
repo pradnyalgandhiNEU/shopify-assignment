@@ -1,4 +1,10 @@
 .photo-list{
    display: inline-flex;
    padding: auto;
+   text-align: center;
+}
+@media screen and (max-width:900px) and (min-width: 324px) {
+   .photo-list{
+      display: block;
+   }
 }
