@@ -1,0 +1,11 @@
+.like{
+    background-color: rgb(206, 206, 206);
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+}
+.like h3{
+    margin: auto;
+    font-size: 15px;
+    text-align: right;
+}
