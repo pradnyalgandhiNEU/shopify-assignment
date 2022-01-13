@@ -32,6 +32,9 @@ button:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width:900px) and (min-width: 324px)  {
+  .search{
+    width: 100%;
+  }
   .result{
     width: 100%;
   }
